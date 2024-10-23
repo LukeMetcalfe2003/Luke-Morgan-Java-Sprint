@@ -1,0 +1,11 @@
+{
+  "name": "luke-morgan-java-sprint",
+  "version": "1.0.0",
+  "description": "Midterm Java Sprint for Luke Metcalfe and Morgan Browne",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luke Metcalfe",
+  "license": "MIT"
+}
