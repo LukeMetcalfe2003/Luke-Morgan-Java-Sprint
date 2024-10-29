@@ -61,4 +61,12 @@ public class Patron {
         this.borrowedItems.add(item);
         System.out.println("Item borrowed: " + item.getTitle());
     }
+
+    public void returnItem(LibraryItem item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Item cannot be null.");
+        }
+        this.borrowedItems.remove(item);
+        System.out.println("Item returned: " + item.getTitle());
+    }
 }

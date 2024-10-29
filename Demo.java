@@ -9,7 +9,8 @@ public class Demo {
                 System.out.println("2. Add Patron");
                 System.out.println("3. Add Author");
                 System.out.println("4. Borrow Item");
-                System.out.println("5. Exit");
+                System.out.println("5. Return Item");
+                System.out.println("6. Exit");
 
                 int choice = scanner.nextInt();
                 scanner.nextLine();
@@ -66,6 +67,23 @@ public class Demo {
                         }
                         break;
                     case 5:
+                        System.out.println("Enter the title of the item to return: ");
+                        String returnTitle = scanner.nextLine();
+                        LibraryItem returnItem = library.searchItemByTitle(returnTitle);
+                        if (returnItem != null) {
+                            System.out.println("Enter the name of the patron: ");
+                            String patronName = scanner.nextLine();
+                            Patron foundPatron = library.searchPatronByName(patronName);
+                            if (foundPatron != null) {
+                                foundPatron.returnItem(returnItem);
+                            } else {
+                                System.out.println("Patron not found.");
+                            }
+                        } else {
+                            System.out.println("Item not found.");
+                        }
+                        break;
+                    case 6:
                         System.out.println("Exiting program...");
                         return;
                     default:
