@@ -1,0 +1,44 @@
+Theoretical Database design:
+
+
+Tables
+
+Authors
+author_id (Primary Key, INT, AUTO_INCREMENT)
+name (VARCHAR)
+date_of_birth (DATE)
+
+LibraryItems
+item_id (Primary Key, INT, AUTO_INCREMENT)
+title (VARCHAR)
+author_id (Foreign Key, INT)
+ISBN (VARCHAR)
+publisher (VARCHAR)
+num_copies (INT)
+
+
+Patrons
+patron_id (Primary Key, INT, AUTO_INCREMENT)
+name (VARCHAR)
+address (VARCHAR)
+phone_number (VARCHAR)
+
+BorrowedItems
+borrowed_id (Primary Key, INT, AUTO_INCREMENT)
+patron_id (Foreign Key, INT)
+item_id (Foreign Key, INT)
+borrow_date (DATE)
+return_date (DATE)
+num_copies (INT)
+
+Entity relationship Diagram:
+Here’s a description of the relationships between the tables:
+
+Authors to LibraryItems: One-to-Many
+An author can write multiple library items, but each library item is written by one author.
+
+Patrons to BorrowedItems: One-to-Many
+A patron can borrow multiple items, but each borrowed record pertains to one patron.
+
+LibraryItems to BorrowedItems: One-to-Many
+A library item can be borrowed multiple times (by different patrons), but each borrowed record refers to one library item.
